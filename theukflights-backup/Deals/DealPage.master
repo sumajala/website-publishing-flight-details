@@ -1,0 +1,787 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DealPage.master.cs" Inherits="Deals_DealPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <title>UK Flights | Cheap flights from the UK</title>
+    <LINK REL="SHORTCUT ICON" HREF="../2.ico">
+   
+<script type="text/javascript" src="../Scripts/AC_RunActiveContent.js"></script>
+ <script type="text/javascript">
+
+     function popup(mylink, windowname) {
+         if (!window.focus) return true;
+         var href;
+         if (typeof (mylink) == 'string')
+             href = mylink;
+         else
+             href = mylink.href;
+         window.open(href, windowname, 'width=600,height=450,location=1,scrollbars=1');
+         return false;
+     }
+
+</script>
+
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- start of css menu-->
+<style type="text/css">
+#cssmenu ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	width:auto;
+	position:relative;
+	display:block;
+	height:39px;
+	text-transform:uppercase;
+	font-size:11.5px;
+	font-weight:bold;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	background-color: transparent;
+	background-image: url(../images/OFF.gif);
+	background-repeat: repeat-x;
+}
+#cssmenu li{
+	display:block;
+	float:left;
+	margin:0;
+	pading:0;}
+#cssmenu li a{
+	display:block;
+	float:left;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-weight:bold;
+	height:24px;
+	background-color: transparent;
+	background-image: url(../images/DIVIDER.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-top: 12px;
+	padding-right: 10px;
+	padding-bottom: 0;
+	padding-left: 10px;
+}
+#cssmenu li a:hover{
+	background-color: transparent;
+	background-image: url(../images/HOVER.gif);
+	background-repeat: repeat-x;
+}
+.formstyle-mini{
+	border: 1px solid #9C9383;
+	text-indent: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11.5px;
+	color: #7A7A7A;
+	width: 200px;
+}	
+    .style1
+    {
+        width: 946px;
+    }
+</style>
+<!-- end if css menu-->
+<meta name="google-site-verification" content="Y70YioEu049QFRCgUiEnbgijB67o_dQcElCy2IwiZ7Y" />
+</head>
+<body>
+ 
+    <form id="form1">
+ 
+    <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="10" height="100" align="left" valign="middle"><a href="#"></a></td>
+    <td width="317" height="100" align="left" valign="middle"><a href="http://www.theukflights.co.uk">
+        <img src="../images/theukflights-logo.png" alt="theukflights" width="280" 
+            height="48" border="0" title="fly the world with the UK flights" /></a></td>
+    <td width="97" align="left" valign="middle"></td>
+    <td width="486" height="100" align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="35" colspan="2" align="right" valign="middle">[<a href="http://www.theukflights.co.uk/login.aspx" class="headernavigation"> Sign In</a> ] - <a href="#" class="headernavigation">My Booking </a> - <a href="#" class="headernavigation">Customer Support</a> - <a href="#" class="headernavigation"> feedback</a></td>
+      </tr>
+      <tr>
+        <td width="51%" height="45" align="right" valign="top">
+            <img src="images/atol_logo.png" alt="Acc" 
+                style="height: 53px; width: 58px" /></td>
+        <td width="49%" height="45" align="right" valign="top"><img src="../images/Book-online-or-call.gif" alt="Book online now" width="210" height="45" /></td>
+      </tr>
+      <tr>
+        <td height="10" align="left" valign="top"></td>
+        <td height="10" align="left" valign="top"></td>
+      </tr>
+    </table></td>
+    <td width="79" height="100" align="left" valign="bottom"><img src="../images/call-lady.gif" alt="call lady" width="78" height="89" /></td>
+    <td width="11" height="100" align="left" valign="top"></td>
+  </tr>
+</table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="10"></td>
+    <td width="980"><table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="1" height="40" align="left" valign="top"></td>
+        <td width="851" height="40" align="left" valign="top"><div id='cssmenu'>
+          <ul>
+          <li class='active'><a href="../Default.aspx"><span>Home</span></a></li>
+            <li><a href="../flights.aspx"><span>Flights</span></a></li>
+            <li><a href="../bussinessclass.aspx"><span>Business Class</span></a></li>
+            <%-- <li><a href="hotels.aspx"><span>Hotels</span></a></li>--%>
+             <li><a href="../citybreaks.aspx"><span>City Breaks</span></a></li>
+            <li><a href="../Hoildays.aspx"><span>Leisure Travel </span></a></li>
+            <li><a href="../aboutus.aspx"><span>Aboutus</span></a></li>
+            <li><a href="../contactus.aspx"><span>contact us</span></a></li>
+             <li><a href="../requestcallback/request-call-back.aspx" onClick="return popup(this,'sreekanth')"><span>Request Call Back </span></a></li>
+          </ul>
+        </td>
+        <td width="10" align="left" valign="top"></td>
+        <td width="107" align="center" valign="top"><a href="../javascript:;" target="_blank" onClick="openLiveHelp(); return false"><img src="../images/livecaht.gif" width="106" height="29" border="0" title="Live Chat" /></a></td>
+        <td width="10" height="40" align="left" valign="top"><a href="#"></a></td>
+      </tr>
+    </table></td>
+    <td width="10"></td>
+  </tr>
+</table>
+
+ <table border="0" align="center" cellpadding="0" cellspacing="0" class="maintableborder">
+
+       <td width="10" height="10" align="left" valign="top"></td>
+    <td width="978" height="10" align="left" valign="top"></td>
+    <td width="10" height="10" align="left" valign="top"></td>
+  </tr>
+  <tr>
+    <td width="10" height="20" align="left" valign="top"></td>
+    <td height="298" align="left" valign="top" background="../images/landing-page-bg.gif" style="background-repeat:no-repeat"><table width="978" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="20" align="left" valign="top" class="style1"></td>
+        <td width="10" height="20" align="left" valign="top"></td>
+        <td height="20" colspan="3" align="left" valign="top"></td>
+      </tr>
+      <tr>
+        <td height="5" align="left" valign="top" class="style1"></td>
+        <td width="10" height="5" align="left" valign="top"></td>
+        <td height="5" colspan="3" align="left" valign="top"></td>
+      </tr>
+      <tr>
+        <td height="260" align="left" valign="top" class="style1"></td>
+        <td width="10" height="260" align="left" valign="top"></td>
+        <td width="438" height="260" align="left" valign="top"><%--<table width="438" border="0" cellspacing="0" cellpadding="0">
+          <tr valign="middle">
+            <td width="268" height="28" align="left" class="h1">Search and book Worldwide Flights</td>
+            <td width="170" height="28" align="left" class="bluetext"><img src="../images/flight-1.png" width="54" height="18" /></td>
+          </tr>
+          <tr>
+            <td height="10" colspan="2" align="left" valign="top" background="../images/small-line.gif"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="78" height="20" align="left" valign="middle"><strong>Type of flight:</strong></td>
+                  <td width="220" height="20" align="left" valign="top"><form action="" method="post" name="form1" id="form2">
+                      <label>
+                      <input type="radio" name="radio" id="radio" value="radio" />
+                      </label>
+                    One way
+                    <input type="radio" name="radio" id="radio2" value="radio" />
+                    Return Flights
+                  </form></td>
+                  <td width="140" height="20" align="left" valign="middle"></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="75" height="20" align="left" valign="middle"><strong> Flying From:</strong></td>
+                  <td width="229" height="20" align="left" valign="top"><form id="form3" name="form3" method="post" action="">
+                    <label>
+                    <select name="DestinationFrom" id="DestinationFrom">
+                      <option value="ABZ">Aberdeen</option>
+                      <option value="BFS">Belfast International</option>
+                      <option value="BHD">Belfast City</option>
+                      <option value="BHX">Birmingham</option>
+                      <option value="BOH">Bournemouth</option>
+                      <option value="BRS">Bristol</option>
+                      <option value="CWL">Cardiff</option>
+                      <option value="EDI">Edinburgh</option>
+                      <option value="EMA">East Midlands</option>
+                      <option value="EXT">Exeter</option>
+                      <option value="GCI">Guernsey</option>
+                      <option value="GLA">Glasgow International</option>
+                      <option value="HUY">Humberside</option>
+                      <option value="INV">Inverness</option>
+                      <option value="IOM">Isle of Man</option>
+                      <option value="JER">Jersey</option>
+                      <option value="LBA">Leeds Bradford</option>
+                      <option value="LCY">London City</option>
+                      <option value="LGW">London Gatwick</option>
+                      <option selected="selected" value="LHR">London Heathrow</option>
+                      <option value="LON">London (All)</option>
+                      <option value="LPL">Liverpool</option>
+                      <option value="LTN">London Luton</option>
+                      <option value="MAN">Manchester</option>
+                      <option value="MME">Teesside</option>
+                      <option value="NCL">Newcastle</option>
+                      <option value="NWI">Norwich</option>
+                      <option value="PIK">Glasgow Prestwick</option>
+                      <option value="PLH">Plymouth</option>
+                      <option value="SOU">Southampton</option>
+                      <option value="STN">London Stansted</option>
+                      <option value="SZD">Sheffield</option>
+                    </select>
+                    </label>
+                  </form></td>
+                  <td width="134" height="20" align="left" valign="top"></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="75" height="20" align="left" valign="middle"><strong> Flying To::</strong></td>
+                  <td width="229" height="20" align="left" valign="top"><form id="form4" name="form3" method="post" action="">
+                      <label>
+                      <input name="textfield" type="text" class="formstyle" id="textfield" />
+                      </label>
+                  </form></td>
+                  <td width="134" height="20" align="left" valign="top"></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="76" height="20" align="left" valign="middle"><strong>Depart Date:</strong></td>
+                  <td width="102" height="20" align="left" valign="middle"><form id="form5" name="form4" method="post" action="">
+                      <label>
+                      <input name="textfield2" type="text" class="formstyle2" id="textfield2" value="DD/MM/YYYY" />
+                      </label>
+                  </form></td>
+                  <td width="5" height="20" align="left" valign="middle"></td>
+                  <td width="22" height="20" align="left" valign="middle"><img src="../images/calender.png" alt="cal" width="20" height="20" /></td>
+                  <td width="10" align="left" valign="middle"></td>
+                  <td width="73" align="left" valign="middle"><strong>Return Date:</strong></td>
+                  <td width="103" align="left" valign="middle"><label>
+                    <input name="textfield3" type="text" class="formstyle2" id="textfield3" value="DD/MM/YYYY" />
+                  </label></td>
+                  <td width="5" align="left" valign="middle"></td>
+                  <td width="37" align="left" valign="middle"><img src="../images/calender.png" alt="cal" width="20" height="20" /></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="133" height="20" align="left" valign="middle"><strong>Preferred Airline If Any:</strong></td>
+                  <td width="10" height="20" align="left" valign="middle"></td>
+                  <td width="295" height="20" align="left" valign="middle"><form id="form6" name="form3" method="post" action="">
+                    <select name="AirLineCode" id="AirLineCode" class="select_elew">
+                      <option value="" selected="selected">*Any</option>
+                      <option value="EI">Aer Lingus</option>
+                      <option value="8U">Afriqiyah Airways</option>
+                      <option value="4L">Air Astana</option>
+                      <option value="AC">Air Canada</option>
+                      <option value="CA">Air China</option>
+                      <option value="AF">Air France</option>
+                      <option value="AI">Air India</option>
+                      <option value="JM">Air Jamaica</option>
+                      <option value="KM">Air Malta</option>
+                      <option value="MK">Air Mauritius</option>
+                      <option value="NZ">Air New Zealand</option>
+                      <option value="SW">Air Namibia</option>
+                      <option value="HM">Air Seychelles</option>
+                      <option value="TN">Air Tahiti</option>
+                      <option value="TS">Air transat</option>
+                      <option value="UM">Air Zimbabwe</option>
+                      <option value="AZ">Alitalia</option>
+                      <option value="AA">American Airlines</option>
+                      <option value="OZ">Asiana Airlines</option>
+                      <option value="OS">Austrian Airlines</option>
+                      <option value="BA">British Airways</option>
+                      <option value="BD">British Midland</option>
+                      <option value="SN">Brussels Airways</option>
+                      <option value="BW">BWIA</option>
+                      <option value="CX">Cathay Pacific</option>
+                      <option value="CI">China Airlines</option>
+                      <option value="MU">China Eastern Airline</option>
+                      <option value="CO">Continental</option>
+                      <option value="CY">Cyprus Airways</option>
+                      <option value="OK">Czech Airlines</option>
+                      <option value="DL">Delta Airlines</option>
+                      <option value="MS">Egyptair</option>
+                      <option value="EK">Emirates</option>
+                      <option value="ET">Ethiopian Airlines</option>
+                      <option value="EY">Etihad Airway</option>
+                      <option value="BR">Eva Air</option>
+                      <option value="AY">Finnair</option>
+                      <option value="GF">Gulf Air</option>
+                      <option value="IB">Iberia Airlines of Spain</option>
+                      <option value="FI">Icelandair</option>
+                      <option value="JL">Japan Airline</option>
+                      <option value="9W">Jet Airways</option>
+                      <option value="KQ">Kenya Airways</option>
+                      <option value="IT">Kingfisher</option>
+                      <option value="KL">KLM Royal Dutch Airlines</option>
+                      <option value="KE">Korean Air</option>
+                      <option value="KU">Kuwait Airways</option>
+                      <option value="LO">LOT-Polish Airlines</option>
+                      <option value="LH">Lufthansa</option>
+                      <option value="W5">Mahan Air</option>
+                      <option value="MH">Malaysian Airlines</option>
+                      <option value="MP">Martinair</option>
+                      <option value="NW">Northwest Airlines Inc</option>
+                      <option value="OA">Olympic Airways</option>
+                      <option value="9R">Phuket Air</option>
+                      <option value="QF">Qantas</option>
+                      <option value="QR">Qatar Airways</option>
+                      <option value="WY">Oman Air </option>
+                      <option value="AT">Royal Air Maroc</option>
+                      <option value="BI">Royal Brunei</option>
+                      <option value="RJ">Royal Jordanian</option>
+                      <option value="SK">SAS</option>
+                      <option value="SV">Saudi Arabian Airline</option>
+                      <option value="Y7">Silverjet</option>
+                      <option value="SQ">Singapore Airlines</option>
+                      <option value="SA">South African Airways</option>
+                      <option value="UL">Sri Lankan Airlines</option>
+                      <option value="LX">Swiss Airlines</option>
+                      <option value="JJ">TAM Brasilian Airline</option>
+                      <option value="TP">TAP - Air Portugal</option>
+                      <option value="TG">Thai International</option>
+                      <option value="TK">THY Turkish</option>
+                      <option value="T5">Turkmenistan</option>
+                      <option value="PS">Ukraine Airways</option>
+                      <option value="UA">United Airlines</option>
+                      <option value="US">US Airways</option>
+                      <option value="HY">Uzbekistan Airways</option>
+                      <option value="VS">Virgin Atlantic</option>
+                    </select>
+                  </form></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="35" height="20" align="left" valign="middle"><strong>Adult:</strong></td>
+                  <td width="10" height="20" align="left" valign="middle"></td>
+                  <td width="51" height="20" align="left" valign="middle"><form id="form7" name="form7" method="post" action="">
+                      <label>
+                      <select name="select" id="select">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                      </select>
+                      </label>
+                  </form></td>
+                  <td width="10" height="20" align="left" valign="middle"></td>
+                  <td width="33" height="20" align="left" valign="middle"><strong>Child:</strong></td>
+                  <td width="10" align="left" valign="middle"></td>
+                  <td width="51" align="left" valign="middle"><form id="form8" name="form7" method="post" action="">
+                      <label>
+                      <select name="select2" id="select2">
+                        <option value="00" selected="selected">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                      </select>
+                      </label>
+                  </form></td>
+                  <td width="10" align="left" valign="middle"></td>
+                  <td width="36" align="left" valign="middle"><strong>Infant:</strong></td>
+                  <td width="10" align="left" valign="middle"></td>
+                  <td width="182" align="left" valign="middle"><select name="select3" id="select3">
+                      <option value="00">00</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                  </select></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="108" height="20" align="left" valign="middle"><strong>Flight Preferences:</strong></td>
+                  <td width="10" height="20" align="left" valign="middle"></td>
+                  <td width="320" height="20" align="left" valign="top"><form action="" method="post" name="form8" class="smalltext" id="form9">
+                      <label>
+                      <input type="checkbox" name="checkbox" id="checkbox" />
+                      </label>
+                    I prefer non-stop flights
+                  </form></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="5" colspan="2" align="left" valign="middle"></td>
+          </tr>
+          <tr>
+            <td height="20" colspan="2" align="left" valign="middle"><table width="438" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="80" height="25" align="left" valign="middle"><strong> Class Type:</strong></td>
+                  <td width="10" height="25" align="left" valign="top"></td>
+                  <td width="226" height="25" align="left" valign="top"><form id="form10" name="form9" method="post" action="">
+                      <label>
+                      <select name="select4" id="select4">
+                        <option value="0" selected="selected">Any</option>
+                        <option value="ec">Economy</option>
+                        <option value="bu">Busines</option>
+                        <option value="pe">Premium Economy</option>
+                        <option value="fr">First</option>
+                      </select>
+                      </label>
+                  </form></td>
+                  <td width="122" align="left" valign="top"><a href="#">
+                      <img src="../images/SUBMIT.png" width="82" height="23" border="0" /></a></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table>--%>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Deals/images/flights_1.jpg" 
+                Width="435px" />
+            <br />
+            <asp:Image ID="Image2" runat="server" Height="115px" 
+                ImageUrl="~/Deals/images/airplane2.png" />
+            <asp:Image ID="Image3" runat="server" Height="115px" 
+                ImageUrl="~/Deals/images/send-query.jpg" style="margin-left: 233px" />
+          </td>
+        <td width="10" height="260" align="left" valign="top"></td>
+        <td width="10" height="260" align="left" valign="top"></td>
+      </tr>
+      
+    </table>
+    
+<%--   <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="maintableborder">--%>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+      </table>   
+     <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="maintableborder">
+  
+  <tr>
+    <td width="10" height="20" align="left" valign="top"></td>
+    <td width="200" height="20" align="left" valign="top"><table width="200" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_unitedstates.aspx" class="destinationslink">Flights to United States</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_chile.aspx" class="destinationslink">Flights to Chile</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_jordan.aspx" class="destinationslink">Flights to Jordan</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_indonesia.aspx" class="destinationslink">Flights to Indonesia</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_germany.aspx" class="destinationslink">Flights to Germany</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_panama.aspx" class="destinationslink">Flights to Panama</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="180" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_srilanka.aspx" class="destinationslink">Flights to Srilanka</a></td>
+      </tr>
+      <tr>
+        <td width="10" height="20" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="20" align="left" valign="top"></td>
+        <td width="180" height="20" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_sudan.aspx" class="destinationslink">Flights to Sudan</a></td>
+      </tr>
+    </table></td>
+    <td width="200" align="left" valign="top"><table width="200" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_canada.aspx" class="destinationslink">Flights to Canada</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_guyana.aspx" class="destinationslink">Flights to Guyana</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_saudiarabia.aspx" class="destinationslink">Flights to Saudi Arabia</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_china.aspx" class="destinationslink">Flights to China</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_finland.aspx" class="destinationslink">Flights to Finland</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_mexico.aspx" class="destinationslink">Flights to Mexico</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="174" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_pakistan.aspx" class="destinationslink"> Flights to Pakistan</a></td>
+      </tr>
+      <tr>
+        <td width="16" height="20" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="20" align="left" valign="top"></td>
+        <td width="174" height="20" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_auckland.aspx" class="destinationslink">Flights to Auckland</a></td>
+      </tr>
+    </table></td>
+    <td width="180" align="left" valign="top"><table width="180" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_newzealand.aspx" class="destinationslink">Flights to New Zealand</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_brazil.aspx" class="destinationslink">Flights to Brazil</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_qatar.aspx" class="destinationslink">Flights to Qatar</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_malaysia.aspx" class="destinationslink">Flights to Malaysia</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_denmark.aspx" class="destinationslink">Flights to Denmark</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_guatemala.aspx" class="destinationslink">Flights to Guatemala</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="150" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_nepal.aspx" class="destinationslink">Flights to Nepal</a></td>
+      </tr>
+      <tr>
+        <td width="20" height="20" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="20" align="left" valign="top"></td>
+        <td width="150" height="20" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_uganda.aspx" class="destinationslink">Flights to Uganda</a></td>
+      </tr>
+    </table></td>
+    <td width="204" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_papua-new-guinea.aspx" class="destinationslink">Flights to Papua New Guinea</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_colombia.aspx" class="destinationslink">Flights to Colombia</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_kuwait.aspx" class="destinationslink">Flights to Kuwait</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_thailand.aspx" class="destinationslink">Flights to Thailand</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_belguim.aspx" class="destinationslink">Flights to Belgium</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_el-salvador.aspx" class="destinationslink">Flights to El Salvador</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="18" align="left" valign="top"></td>
+        <td width="85%" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_bangladesh.aspx" class="destinationslink">Flights to Bangladesh</a></td>
+      </tr>
+      <tr>
+        <td width="10%" height="20" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="5%" height="20" align="left" valign="top"></td>
+        <td width="85%" height="20" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_nigeria.aspx" class="destinationslink">Flights to Nigeria</a></td>
+      </tr>
+    </table></td>
+    <td width="194" align="left" valign="top"><table width="194" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_australia.aspx" class="destinationslink">Flights to Australia</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_argentina.aspx" class="destinationslink">Flights to Argentina</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_bahrain.aspx" class="destinationslink">Flights to Bahrain</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_philipines.aspx" class="destinationslink">Flights to Phillipines</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_italy.aspx" class="destinationslink">Flights to Italy</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_costarica.aspx" class="destinationslink">Flights to Costa Rica</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="18" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="18" align="left" valign="top"></td>
+        <td width="165" height="18" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_india.aspx" class="destinationslink">Flights to India</a></td>
+      </tr>
+      <tr>
+        <td width="19" height="20" align="right" valign="middle"><img src="../images/Holidays/Arrow.gif" width="8" height="11" /></td>
+        <td width="10" height="20" align="left" valign="top"></td>
+        <td width="165" height="20" align="left" valign="middle"><a href="http://www.theukflights.co.uk/Flights/flights_to_ghana.aspx" class="destinationslink">Flights to Ghana</a></td>
+      </tr>
+    </table></td>
+    <td width="10" height="20" align="left" valign="top"></td>
+  </tr>
+  <tr>
+    <td width="10" height="10" align="left" valign="top"></td>
+    <td height="10" colspan="5" align="left" valign="top" background="../images/small-line.gif"></td>
+    <td width="10" height="10" align="left" valign="top"></td>
+  </tr>
+</table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="maintableborder">
+  <tr>
+    <td width="10" height="20" align="left" valign="top"></td>
+    <td height="20" colspan="5" align="center" valign="middle"><img src="../images/Airlines-logos.gif" alt="Airline Logos" width="966" height="37" /></td>
+    <td width="13" height="20" align="left" valign="top"></td>
+  </tr>
+  <tr>
+    <td width="10" height="10" align="left" valign="top"></td>
+    <td height="10" colspan="5" align="left" valign="top" background="../images/small-line.gif"></td>
+    <td width="13" height="10" align="left" valign="top"></td>
+  </tr>
+  <tr>
+    <td width="10" height="30" align="left" valign="top"></td>
+    <td width="451" height="30" align="left" valign="top"><table width="450" border="0" cellspacing="0" cellpadding="0">
+      <tr valign="bottom">
+        <td width="100" height="37" align="left" valign="middle"><strong>FOLLOW US ON:</strong></td>
+        <td width="32" align="left" valign="bottom"><a href="http://www.facebook.co.uk/pages/The-UK-Flights/147999271930630?fref=ts"><img src="../images/facebook.png" alt="facebook" width="32" height="32" border="0" /></a></a></td>
+        <td width="5" align="left" valign="middle"></td>
+        <td width="32" height="37" align="left"><a href="https://twitter.co.uk/intent/follow?original_referer=http%3A//www.theukflights.co.uk/&amp;screen_name=TheUKFlights&amp;source=followbutton&amp;variant=2.0"><img src="../images/twitter.png" alt="twitter" width="32" height="32" border="0" /></a></td>
+        <td width="5" height="37" align="left"></td>
+        <td width="32" height="37" align="left"><a href="#"><img src="../images/Yahoo.png" alt="yahoo" width="32" height="32" border="0" /></a></td>
+        <td width="5" height="37" align="left"></td>
+        <td width="32" height="37" align="left"><a href="#"><img src="../images/rss.png" alt="rss" width="32" height="32" border="0" /></a></td>
+        <td width="5" height="37" align="left"></td>
+        <td width="36" height="37" align="left"><img src="../images/youtube.png" alt="youtube" width="32" height="32" /></td>
+        <td width="187" height="37" align="left"></td>
+      </tr>
+    </table></td>
+    <td width="170" height="30" align="right" valign="top">
+        <img src="images/atol_logo.png" style="height: 42px; width: 46px" /></td>
+    <td width="96" height="30" align="center" valign="middle"><p class="blackboldtext">Payment Option:</p>    </td>
+    <td width="255" height="30" align="right" valign="middle"><img src="../images/payment-optiopn.gif" alt="payment option" width="255" height="37" /></td>
+    <td width="5" height="30" align="right" valign="middle"></td>
+    <td width="13" height="30" align="left" valign="top"></td>
+  </tr><tr>
+    <td height="10" align="left" valign="top"></td>
+    <td height="10" align="left" valign="middle"></td>
+    <td height="10" align="right" valign="top"></td>
+    <td height="10" align="center" valign="middle"></td>
+    <td height="10" align="right" valign="middle"></td>
+    <td height="10" align="right" valign="middle"></td>
+    <td height="10" align="left" valign="top"></td>
+  </tr>
+</table>
+    
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="4%" height="39" align="left" valign="top" background="../images/footer-bg.gif"></td>
+    <td width="91%" height="39" align="left" valign="top" background="../images/footer-bg.gif"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="whitetext">
+
+      <tr>
+        <td width="10" height="39" align="left" valign="top"></td>
+        <td width="980" height="39" align="center" valign="middle"><a href="http://www.theukflights.co.uk" class="smallwhitelinks">Home </a> | <a href="http://www.theukflights.co.uk/flights.aspx" class="smallwhitelinks">Flights</a> | <a href="http://www.theukflights.co.uk/Hoildays.aspx" class="smallwhitelinks"> Holidays </a> | <a href="http://www.theukflights.co.uk/safi.aspx" class="smallwhitelinks"> Safi</a> | <a href="http://www.theukflights.co.uk/travelinfo.aspx" class="smallwhitelinks">Travel info</a> | <a href="http://www.theukflights.co.uk/privacypolicy.aspx" class="smallwhitelinks">Privacy Policy</a>  |  <a href="http://www.theukflights.co.uk/termsandconditions.aspx" class="smallwhitelinks">Terms and Conditions</a>  | <a href="http://www.theukflights.co.uk/contactus.aspx" class="smallwhitelinks">Contact Us</a>  |  <a href="#" class="smallwhitelinks"> Sitemap</a>  |  <a href="http://www.theukflights.co.uk/contactus.aspx" class="smallwhitelinks"> FAQ</a> | <br> 
+          <span class="smallwhitetext">The UK Flights © 2008. All Rights Reserved. </span></td>
+        <td width="10" height="39" align="left" valign="top"></td>
+      </tr>
+      
+      
+    </table></td>
+    <td width="5%" height="39" align="left" valign="top" background="../images/footer-bg.gif"></td>
+  </tr>
+</table>
+    <script type="text/javascript" language="javascript" src="../livehelp/include/javascript.php"></script>   
+    </form>
+  </body>
+  <script>
+      (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-43884104-1', 'theukflights.co.uk');
+      ga('send', 'pageview');
+
+</script>
+</html>

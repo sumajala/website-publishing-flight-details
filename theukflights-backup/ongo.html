@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+<title>Job Board Application</title>
+<style type="text/css">
+    .box{
+        display: none;
+        margin-bottom: 40px;
+    }
+    .box select {
+    display: inline-block;
+    width: 70%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+    padding: 0 16px;
+    height: 46px!important;
+    font-size: 16px;
+    padding-top: .6em!important;
+    padding-bottom: .6em!important;
+    padding-right: 0;
+    }
+    .select-option select{
+    display: inline-block;
+    width: 70%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+    padding: 0 16px;
+    height: 46px!important;
+    font-size: 16px;
+    padding-top: .6em!important;
+    padding-bottom: .6em!important;
+    padding-right: 0;
+    }
+    .p-budjet label{
+        font-size: 22px;
+        color: #033899;
+        font-weight: 600;
+        margin: 10px 0 20px 0;        
+    }
+    .p-budjet span{
+        background: #6006b0;
+        border-radius: 50%;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-right: 30px;        
+    }
+    .select-option label {
+        font-size: 22px;
+        color: #033899;
+        font-weight: 600;
+        margin: 10px 0 20px 0; 
+    }
+    .select-option span {
+        background: #6006b0;
+        border-radius: 50%;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-right: 30px;
+    }
+    .p-name label {
+        font-size: 22px;
+        color: #033899;
+        font-weight: 600;
+        margin: 10px 0 20px 0; 
+    }
+    .p-name span {
+        background: #6006b0;
+        border-radius: 50%;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-right: 30px;
+    }
+    .p-skills label {
+        font-size: 22px;
+        color: #033899;
+        font-weight: 600;
+        margin: 10px 0 20px 0; 
+    }
+    .p-skills span{
+        background: #6006b0;
+        border-radius: 50%;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        margin-right: 30px;        
+    }
+    .p-name input{
+    display: inline-block;
+    width: 70%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    line-height: 1.2;
+    font-weight: 400;
+    padding: 0 8px;
+    height: 36px!important;
+    font-size: 16px;
+    padding-top: .2em!important;
+    padding-bottom: .2em!important;
+    padding-right: 0;
+    }
+    .p-skills input{
+    display: inline-block;
+    width: 70%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    line-height: 1.2;
+    font-weight: 400;
+    padding: 0 8px;
+    height: 36px!important;
+    font-size: 16px;
+    padding-top: .2em!important;
+    padding-bottom: .2em!important;
+    padding-right: 0;        
+    }
+    #tags > em{
+      cursor:pointer;
+      display:block;
+      float:left;
+      color:#fff;
+      background: #033899;
+      padding:5px;
+      padding-right:25px;
+      margin:4px;
+      font-style: normal;
+    }
+    #tags > em:hover{
+      opacity:0.7;
+    }
+    #tags > em:after{
+     position:absolute;
+     content:"×";
+     border:1px solid;
+     padding:2px 5px;
+     margin-left:3px;
+     font-size:11px;
+    }
+    .p-skills textarea {
+    display: inline-block;
+    width: 68.5%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    font-size: 15px;
+    font-size: .9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+    min-height: 100px;
+    line-height: 1.5;
+    text-indent: 0;
+    padding: 10px 15px;
+    min-height: 150px;
+    font-size: 16px;
+    }
+    select.b-cur{
+    display: inline-block;
+    width: 15%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    line-height: 1.2;
+    font-weight: 400;
+    padding: 0 8px;
+    height: 36px!important;
+    font-size: 16px;
+    padding-top: .2em!important;
+    padding-bottom: .2em!important;
+    padding-right: 0;        
+    }
+    select.b-amount{        
+    display: inline-block;
+    width: 60%;
+    border-style: solid;
+    border-width: 1px;
+    color: #1f2836;
+    border-color: #BEC0C2;
+    background-color: #fff;
+    box-shadow: none;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+    border-radius: 3px 3px 3px 3px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    line-height: 1.2;
+    font-weight: 400;
+    padding: 0 8px;
+    height: 36px!important;
+    font-size: 16px;
+    padding-top: .2em!important;
+    padding-bottom: .2em!important;
+    padding-right: 0;       
+    }
+    .file-uploade {
+        border: 1px dashed #6006b0;
+        padding: 10px;
+        width: 60%;
+    }
+    .display {
+        display: none;
+    }
+    .p-name:hover .display {
+        display: block;
+        width: 150px;
+        height: 200px;
+        border: 1px solid #eee;
+        padding: 10px;
+        position: fixed;
+        right: 15%;
+        top: 15%;
+        z-index: -1;
+    }
+    .diplay:before{
+        
+    }
+    .p-name:active .display {
+        display: block;
+    }
+    .display::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #74048f;
+    position: absolute;
+    bottom: 50%;
+    left: -15px;
+    z-index: -2;
+}
+    .display-p {
+        display: none;
+    }
+    .p-deatails:hover .display-p{
+        display: block;
+        width: 180px;
+        height: 200px;
+        border: 1px solid #eee;
+        padding: 10px;
+        position: fixed;
+        right: 10%;
+        top: 45%;
+        z-index: -1;
+    }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(function(){ // DOM ready
+
+  // ::: TAGS BOX
+  
+  $("#tags input").on({
+    focusout : function() {
+      var txt= this.value.replace(/[^a-z0-9\+\-\.\#]/ig,''); // allowed characters
+      if(txt) $("<em/>",{text:txt.toLowerCase(), insertBefore:this});
+      this.value="";
+    },
+    keyup : function(ev) {
+      // if: comma|enter (delimit more keyCodes with | pipe)
+      if(/(188|13)/.test(ev.which)) $(this).focusout(); 
+    }
+  });
+  $('#tags').on('click', 'em', function() {
+    if(confirm("Remove "+ $(this).text() +"?")) $(this).remove(); 
+  });
+
+});
+
+
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="web"){
+                $(".box").not(".web").hide();
+                $(".web").show();
+            }
+            else if($(this).attr("value")=="wrt"){
+                $(".box").not(".wrt").hide();
+                $(".wrt").show();
+            }
+            else if($(this).attr("value")=="design"){
+                $(".box").not(".design").hide();
+                $(".design").show();
+            }
+            else if($(this).attr("value")=="d-entry"){
+                $(".box").not(".d-entry").hide();
+                $(".d-entry").show();
+            }
+            else if($(this).attr("value")=="hr"){
+                $(".box").not(".hr").hide();
+                $(".hr").show();
+            }
+            else if($(this).attr("value")=="seo"){
+                $(".box").not(".seo").hide();
+                $(".seo").show();
+            }
+            else if($(this).attr("value")=="med"){
+                $(".box").not(".med").hide();
+                $(".med").show();
+            }
+            else if($(this).attr("value")=="bpo"){
+                $(".box").not(".bpo").hide();
+                $(".bpo").show();
+            }
+            else if($(this).attr("value")=="other"){
+                $(".box").not(".other").hide();
+                $(".other").show();
+            }
+        });
+    }).change();
+});
+</script>
+</head>
+<body>
+    <form action=" ../../job.php" method="post">
+        <div class="job-board">
+            <div class="select-option">
+                <label><span>1</span>What Type Job Your Looking For?.</label><br><br>
+                <select>
+                    <option>Choose a Work Type</option>
+                    <option value="web">Website IT & Software</option>
+                    <option value="wrt">Writing</option>
+                    <option value="design">Design</option>
+                    <option value="d-entry">Data Entry</option>
+                    <option value="hr">HR Services</option>
+                    <option value="seo">SEO/Digital Maraketing</option>
+                    <option value="med">Medical Transcripts</option>
+                    <option value="bpo">BPO | Customer Services</option>
+                    <option value="other">Other</option>
+                </select>
+            </div><br>
+            <div class="web box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="wrt box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="design box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="d-entry box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="hr box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="seo box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="med box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="bpo box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <div class="other box">
+                <select>
+                    <option value="xyapz">Choose your job</option>
+                    <option value="xyapz">Build a website</option>
+                    <option value="xyapz">Dot net developer</option>
+                    <option value="xyapz">PHP Developer</option>
+                    <option value="xyapz">Android Developer</option>
+                    <option value="xyapz">HTML & CSS Expert</option>
+                    <option value="xyapz">Graphic Designer</option>
+                    <option value="xyapz">Logo Designer</option>
+                </select>
+            </div>
+            <br><br>
+            <div class="p-name">
+                <label><span>2</span>What Type Job Your Looking For?.</label><br><br>
+                Project Name: <br>
+                <input type="text" value="" name="p-name" required>
+                <div class="display">
+                    <h2>Project Name</h2>
+                    <p>Your  Project name is important as it is what attracts freelancers to bid on your project. You should clearly describe what you need in as few words as possible</p>
+                </div>
+            </div>
+            <br><br>
+            <div class="p-skills" id="tags">
+                <label><span>3</span>Let Us know more about your Project</label><br><br>
+                List Your Skills: <br>
+                <input type="text" value="" name="skills" placeholder="Add a tag"><br><br>
+                Describe Your Project:<br>
+                <div class="p-deatails">
+                    <textarea name="p-details" placeholder="Describe your Project Here"></textarea>
+                    <div class="display-p">
+                        <h2>Describe Project</h2>
+                        <p>The more detail you provide, the better chance you have in getting exactly what you are after in the shortest possible time period.</p>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div id="fileupload" class="file-uploade">
+            <span class="btn btn-plain btn-file-uploader">
+                <span class="fl-icon-plus"></span>
+                <span>Upload Files</span>
+                <input type="file" name="upload[]" multiple="" class="fileupload-input">
+                <input type="hidden" name="fileset" class="upload-fileset" value="">
+            </span>
+            <p class="file-upload">Drag &amp; drop any images or documents that might be helpful in explaining your project brief here</p>
+        </div>    
+            <br><br>
+            <div class="p-budjet">
+                <label><span>4</span>What budget do you have in mind?</label><br><br>
+                <select class="b-cur" name="currency" required>
+                    <option>Currency Type</option>
+                    <option value="gbp">GBP</option>
+                    <option value="usd">USD</option>
+                    <option value="inr">INR</option>
+                    <option value="euro">Euro</option>
+                </select>
+                <select class="b-amount" name="amount" required>
+                    <option>Micro Project (&pound; 10 - &pound; 30)</option>
+                    <option>Simple Project (&pound; 50 - &pound; 150)</option>
+                    <option>Very Small Project (&pound; 100 - &pound; 250)</option>
+                    <option>Small Project (&pound; 200 - &pound; 350)</option>
+                    <option>Medium Project (&pound; 250 - &pound; 400)</option>
+                    <option>Large Project (&pound; 350 - &pound; 550)</option>
+                    <option>Larger Project (&pound; 500 - &pound; 750)</option>
+                    <option>Huge Project (&pound; 850 - &pound; 1400)</option>
+
+                </select>
+            </div>
+            <br><br>
+            <div class="sub">
+                <input type="submit" name="submit">
+            </div>
+        </div>
+    </form>
+</body>
+</html>                    
